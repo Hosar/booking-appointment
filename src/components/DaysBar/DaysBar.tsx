@@ -38,7 +38,7 @@ export function DaysBar({
       <button title="Previous days" type="button" onClick={onPreviousDaysBatch}>
         <Image src={LeftArrow} width={10} height={10} alt="Left Calendar" />
       </button>
-      <div className="bg-orange flex w-full justify-evenly">
+      <div className="flex w-full justify-evenly">
         {days.map((day, index) => (
           <CircleWithLabel
             key={day}

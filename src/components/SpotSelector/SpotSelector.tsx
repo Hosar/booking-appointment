@@ -33,9 +33,8 @@ export function SpotSelector({ spotsByDay }: SpotSelectorProps) {
     return newArr;
   };
 
-  //   console.log("newArr", newArr);
   return (
-    <div className="flex bg-blue justify-center gap-2">
+    <div className="flex justify-center gap-2">
       {spotsByDay.map((day: any) => {
         const newArr = fillNotExistingSpot(day);
         return (

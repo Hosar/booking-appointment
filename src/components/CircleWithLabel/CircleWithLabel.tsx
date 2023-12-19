@@ -18,8 +18,7 @@ export function CircleWithLabel({ label, number }: CircleWithLabelProps) {
     "border-2",
     "text-black",
     "justify-center",
-    "text-[0.8rem]",
-    "bg-purple"
+    "text-[0.8rem]"
   );
   return (
     <div className="flex flex-col bg-white">

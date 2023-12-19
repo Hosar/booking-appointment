@@ -5,7 +5,7 @@ import { FadeContainer } from "@/components/FadeContainer";
 import { SpotSelector, timeSpot } from "@/components/SpotSelector";
 import { MainLayout } from "@/screens/MainLayout";
 import { scheduleTime2 } from "@/api/fakes";
-import { Button } from "@/components/Button";
+import { RoundedButton } from "@/components/RoundedButton";
 import BuildingIcon from "../../public/building-icon.svg";
 import HouseIcon from "../../public/house-icon.svg";
 import VideoIcon from "../../public/video-icon.svg";
@@ -35,14 +35,17 @@ export default function Home() {
   return (
     <MainLayout>
       <FadeContainer title="Book Appointment">
-        <div className="text-black size-default">
-          What service are you looking for? *
-        </div>
-        {/*<div>
-          <Button text="Behavior Therapy" isSelected />
-          <Button text="Massage Therapy" />
-        </div>
         <div className="flex flex-col">
+          <span className="text-black size-default">
+            What service are you looking for? *
+          </span>
+          <div className="flex gap-2">
+            <RoundedButton text="Behavior Therapy" isSelected />
+            <RoundedButton text="Massage Therapy" />
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-4">
           <span className="text-black text-default">
             What's the reason(s) for your visit?* *
           </span>
@@ -63,28 +66,30 @@ export default function Home() {
             <option value="3">Trigger Point Massage</option>
           </select>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-4">
           <span className="text-black text-default">
             Where do you want to meet service provider? *
           </span>
-          <Button
-            iconImg={BuildingIcon}
-            text="On provider’s location"
-            isSelected
-          />
-          <Button iconImg={HouseIcon} text="On my location" />
-          <Button iconImg={VideoIcon} text="On video call" />
+          <div className="flex flex-wrap gap-2">
+            <RoundedButton
+              iconImg={BuildingIcon}
+              text="On provider’s location"
+              isSelected
+            />
+            <RoundedButton iconImg={HouseIcon} text="On my location" />
+            <RoundedButton iconImg={VideoIcon} text="On video call" />
+          </div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-4">
           <span className="text-black text-default">
             Did you seen this provider before?
           </span>
-          <div className="flex">
-            <Button text="Yes" isSelected />
-            <Button text="No" />
+          <div className="flex gap-2">
+            <RoundedButton text="Yes" isSelected />
+            <RoundedButton text="No" />
           </div>
         </div>
-        <div>
+        <div className="mt-4 rounded-md border-[1px] border-light-black border-solid bg-white p-4">
           <span className="text-black text-default">
             Select an available time
           </span>
@@ -93,9 +98,17 @@ export default function Home() {
             onNextDaysBatch={onNextDaysBatch}
             onPreviousDaysBatch={onPreviousDaysBatch}
           />
-
           <SpotSelector spotsByDay={sportByDay} />
-        </div> */}
+        </div>
+        <div className="mt-4">
+          <button
+            className="bg-green text-white rounded-md p-2 w-full"
+            title="Continue Booking"
+          >
+            Continue Booking
+          </button>
+          {/* <Button text="Book Appointment" isSelected /> */}
+        </div>
       </FadeContainer>
     </MainLayout>
   );

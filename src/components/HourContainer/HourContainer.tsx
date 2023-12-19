@@ -16,14 +16,16 @@ export function HourContainer({
     "max-w-[5rem]",
     "text-black",
     "border-solid",
-    "border-black",
-    "border-2",
+    "border-green-disabled",
+    "border-[1px]",
     "max-w-[52px]",
     "text-small",
     "flex",
     "justify-center",
     "pl-2",
     "pr-2",
+    "mt-2",
+    "font-light",
   ];
   const hourContainer = clsx(
     defaultStyles,

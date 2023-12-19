@@ -9,7 +9,7 @@ interface ButtonProps {
   readonly iconImg?: any;
 }
 
-export function Button({
+export function RoundedButton({
   text,
   isSelected = false,
   iconImg = null,
@@ -17,13 +17,11 @@ export function Button({
   const btnStyle = clsx(
     "rounded-full",
     "max-h-[36px]",
-    "max-w-[186px]",
     "border-[1px]",
     "border-solid",
     "pl-2",
     "pr-2",
-    "text-default",
-
+    "text-small",
     {
       "bg-green-disabled": isSelected === true,
       "border-green": isSelected === true,

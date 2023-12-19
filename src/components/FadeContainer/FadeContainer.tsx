@@ -13,10 +13,12 @@ const containerStyles = clsx(
   "shadow-xl",
   "bg-body",
   "min-h-[200px]",
-  "min-w-[365px]",
   "border-light-black",
   "border-2",
-  "border-solid"
+  "border-solid",
+  "pl-6",
+  "pr-6",
+  "pb-6"
 );
 
 export function FadeContainer({ children, title }: FadeContainerProps) {
