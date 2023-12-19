@@ -1,36 +1,20 @@
 "use client";
-import { useState, useEffect } from "react";
 import { DaysBar } from "@/components/DaysBar";
 import { FadeContainer } from "@/components/FadeContainer";
-import { SpotSelector, timeSpot } from "@/components/SpotSelector";
+import { SpotSelector } from "@/components/SpotSelector";
 import { MainLayout } from "@/screens/MainLayout";
-import { scheduleTime2 } from "@/api/fakes";
 import { RoundedButton } from "@/components/RoundedButton";
 import BuildingIcon from "../../public/building-icon.svg";
 import HouseIcon from "../../public/house-icon.svg";
 import VideoIcon from "../../public/video-icon.svg";
+import { useSpotSelector } from "@/hooks/useSpotSelector";
 
 export default function Home() {
-  const [currentBatch, setCurrentBatch] = useState(0);
-  const [sportByDay, setSportByDay] = useState<Array<timeSpot>>([]);
-  const [days, setDays] = useState<Array<string>>([]);
+  const [sportByDay, days, onNextDaysBatch, onPreviousDaysBatch] =
+    useSpotSelector();
 
-  useEffect(() => {
-    const batch = scheduleTime2[currentBatch];
-    const _days = Object.keys(batch);
-    setDays(_days);
-    setSportByDay(Object.values(batch));
-  }, [currentBatch]);
-
-  const onNextDaysBatch = () => {
-    if (currentBatch === scheduleTime2.length - 1) return;
-    setCurrentBatch((prev) => prev + 1);
-  };
-
-  const onPreviousDaysBatch = () => {
-    if (currentBatch === 0) return;
-    setCurrentBatch((prev) => prev - 1);
-  };
+  console.log("days", days);
+  console.log("SportByDay", sportByDay);
 
   return (
     <MainLayout>
@@ -107,7 +91,6 @@ export default function Home() {
           >
             Continue Booking
           </button>
-          {/* <Button text="Book Appointment" isSelected /> */}
         </div>
       </FadeContainer>
     </MainLayout>

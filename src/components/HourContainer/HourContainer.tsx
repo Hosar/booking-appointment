@@ -39,7 +39,6 @@ export function HourContainer({
 
   const spotUndefinedStyles = clsx(defaultStyles, "bg-body");
 
-  console.log("hourContainer", hourContainer, isAvailable);
   if (!exist)
     return (
       // <div className="bg-body text-black border-solid border-black border-2 max-w-[52px]">

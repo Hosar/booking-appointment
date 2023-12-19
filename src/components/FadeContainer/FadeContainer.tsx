@@ -26,7 +26,7 @@ export function FadeContainer({ children, title }: FadeContainerProps) {
     <div className={containerStyles}>
       <If condition={title}>
         <Then>
-          <div className="p-4 w-full text-title font-bold text-black">
+          <div className="pt-4 pb-4 w-full text-title font-[500] text-black">
             {title}
           </div>
         </Then>
