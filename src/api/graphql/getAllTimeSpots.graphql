@@ -1,0 +1,10 @@
+query getAll {
+  getAll {
+    day
+    spots {
+      time
+      isAvailable
+      exist
+    }
+  }
+}
