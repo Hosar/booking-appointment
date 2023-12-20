@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import { timeSpot } from "@/components/SpotSelector";
 import { scheduleTime2 } from "@/api/fakes";
+import { TimeScheduleModel2 } from '@/gql/graphql';
 
-export function useSpotSelector() {
+interface SpotSelectorProps {
+    data: TimeScheduleModel2[][] | undefined;
+}
+
+export function useSpotSelector({ data }: SpotSelectorProps) {
     const [currentBatch, setCurrentBatch] = useState(0);
     const [sportByDay, setSportByDay] = useState<Array<timeSpot>>([]);
     const [days, setDays] = useState<Array<string>>([]);
+
+    // TODO:
+    // Here I need to work with data from the server, instead of the fake data
 
     useEffect(() => {
         const batch = scheduleTime2[currentBatch];

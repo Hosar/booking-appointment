@@ -14,9 +14,8 @@ import { useGetAllQuery } from "@/gql/graphql";
 export function Booking() {
   const { data, error } = useGetAllQuery();
   const [sportByDay, days, onNextDaysBatch, onPreviousDaysBatch] =
-    useSpotSelector();
+    useSpotSelector({ data: data?.getAll });
 
-  console.log("data", data, error);
   return (
     <MainLayout>
       <FadeContainer title="Book Appointment">
